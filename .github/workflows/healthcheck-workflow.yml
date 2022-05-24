@@ -5,9 +5,9 @@ on:
 
 jobs:
   healthCheck:
+    runs-on: ubuntu-latest
     steps:
       - name: do health check
-        runs-on: ubuntu-latest
         uses: jtalk/url-health-check-action@v2
         with:
           url: https://app-test-kirsty-alice.herokuapp.com/health
