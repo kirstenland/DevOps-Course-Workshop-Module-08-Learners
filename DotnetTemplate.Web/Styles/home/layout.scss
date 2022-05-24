@@ -73,7 +73,9 @@ nav .nhsuk-width-container {
   margin: 0 auto;
 }
 
-nav, .nhsuk-header__navigation, #header-navigation {
+nav,
+.nhsuk-header__navigation,
+#header-navigation {
   border-bottom: 0;
 
   @include mq($until: 1024px) {
@@ -84,7 +86,7 @@ nav, .nhsuk-header__navigation, #header-navigation {
 .visual-separator {
   height: 8px;
   width: 100%;
-  background-color: #005eb8;
+  background-color: hotpink;
 
   @include mq($from: large-desktop) {
     display: none;
