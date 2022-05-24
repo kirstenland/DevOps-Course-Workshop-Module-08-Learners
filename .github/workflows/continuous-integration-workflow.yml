@@ -36,7 +36,7 @@ jobs:
         with:
           username: aliwen
           password: ${{ secrets.DOCKER_KEY }}
-      - run: docker build --tag aliwen/app-test:$GITHUB_SHA .
+      - run: docker build --target run-stage --tag aliwen/app-test:$GITHUB_SHA .
       - run: docker push aliwen/app-test:$GITHUB_SHA  
   publish-staging:
     runs-on: ubuntu-latest
