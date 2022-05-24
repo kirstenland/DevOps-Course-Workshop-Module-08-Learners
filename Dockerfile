@@ -17,5 +17,5 @@ RUN dotnet publish -c release -o /app
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS run-stage
 EXPOSE 5000
 WORKDIR /app
-COPY --from=build /app ./
+COPY --from=build-stage /app ./
 ENTRYPOINT ["dotnet", "DotnetTemplate.Web.dll"]
