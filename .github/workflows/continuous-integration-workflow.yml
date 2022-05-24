@@ -25,3 +25,13 @@ jobs:
     - name: Typescript test
       run: npm run test
       working-directory: ./DotnetTemplate.Web
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: aliwen
+          password: ${{ secrets.DOCKER_KEY }}
+      - run: docker build --tag aliwen/app-test:$GITHUB_SHA .
+      - run: docker push aliwen/app-test:$GITHUB_SHA  
